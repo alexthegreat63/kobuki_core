@@ -245,7 +245,8 @@ void DockDrive::updateVelocity(const std::vector<unsigned char>& signal_filt, co
   // determine the current state based on ir and the previous state
   // common transition. idle -> scan -> find_stream -> get_stream -> scan -> aligned_far -> aligned_near -> docked_in -> done
 
-  current_state = new_state = state;
+  current_state = state;
+  new_state = new_state;
   switch((unsigned int)current_state) {
     case RobotDockingState::IDLE:
       idle(new_state, new_vx, new_wz);
